@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta charset="utf-8">
+    <title>Dr. uuspider's private page</title>
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<TABLE BORDER="0"  BGCOLOR="#ffffff" >
+  <TR >
+    <TD VALIGN="bottom">
+      <IMG SRC="/img/thumbnail.jpeg" WIDTH="52" HEIGHT="52" ALT=""
+           TITLE="A thumbnail photo of uuspider" VALIGN="middle">
+    </TD>
+    <TD VALIGN="bottom">
+      <FONT SIZE="2">&lt;<A HREF="http://www.twitter.com/uuspider" target="_blank" title="This is a PRIVATE page">This is uuspider's private page</A>&gt;</FONT><BR>
+      <FONT SIZE="-2">Copyright &copy; 2009-2015 by <A HREF="http://www.twitter.com/uuspider" target="_blank">uuspider</A></FONT><BR>
+    </TD>
+  </TR>
+</TABLE>
+
+<HR>
+
+<TABLE BORDER="0" width= "100%">
+  <TR  BGCOLOR="#ffe7f4">
+    <TD VALIGN="bottom">
+      <FONT SIZE="2"><b>LOG & MEMO</b></FONT><BR>
+    </TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="bottom">
+      <FONT SIZE="2">
+	1. <br>
+	2. 
+	</FONT><BR>
+    </TD>
+  </TR>
+
+</TABLE>
+
+<TABLE BORDER="0" width= "100%">
+  <TR BGCOLOR="#ffffdd">
+    <TD VALIGN="bottom">
+      <FONT SIZE="2"><b>SHOULD TO KNOW</b></FONT><BR>
+    </TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="bottom">
+      <FONT SIZE="2">
+	1. <br>
+	2. 
+	</FONT><BR>
+    </TD>
+  </TR>
+
+
+</TABLE>
+
+<TABLE BORDER="0" width= "100%">
+  <TR BGCOLOR="#e8f5fe">
+    <TD VALIGN="bottom">
+      <FONT SIZE="2"><b>WORTH TO STUDY</b></FONT><BR>
+    </TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="bottom">
+      <FONT SIZE="2">
+	1. <br>
+	2. 
+	</FONT><BR>
+    </TD>
+  </TR>
+
+</TABLE>
+
+<TABLE BORDER="0" width= "100%">
+  <TR BGCOLOR="#f2fddb">
+    <TD VALIGN="bottom">
+      <FONT SIZE="2"><b>PHOTOS & INTEREST雷达</b></FONT><BR>
+    </TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="bottom">
+      <FONT SIZE="2">
+       <script>
+       /**
+        *随机图片
+        */
+        var str=new
+        Array("/img/green.png","/img/fengzhigu.png","/img/fengzhigu2.png","/img/zhongwen.png","/img/yuansu.png",,,,,,,,,,,,,);
+        var a;
+        a=str[parseInt(Math.random()*(str.length))];
+        document.write("<img src="+a+">");
+        </script> 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<h1>1.3 雷达的工作频率</h1>
+<p>最早用于搜索雷达的电磁波波长为23cm，这一波段被定义为L波段（英语Long的字头），后来这一波段的中心波长变为22cm。<br />
+</p>
+<p>当波长为10cm的电磁波被使用后，其波段被定义为S波段(英语Short的字头，意为比原有波长短的电磁波）。 </p>
+<p>在主要使用3cm电磁波的火控雷达出现后，3cm波长的电磁波被称为X波段，X形似准星，被用来代表座标上的某点。 </p>
+<p>为了结合X波段和S波段的优点，逐渐出现了使用中心波长为5cm的雷达，该波段被称为C波段（C即Compromise，英语“结合”一词的字头）。 </p>
+<p>在英国人之后，德国人也开始独立开发自己的雷达，他们选择1.5cm作为自己雷达的中心波长。这一波长的电磁波就被称为K波段（K = Kurtz，德语中“短”的字头）。 </p>
+<p>“不幸”的是，德国人以其日尔曼民族特有的“精确性”选择的波长可以被水蒸气强烈吸收。结果这一波段的雷达不能在雨中和有雾的天气使用。战后设计的雷达为了避免这一吸收峰 ，通常使用比K波段波长略长（Ka，即英语K-above的缩写，意为在K波段之上）和略短（Ku，即英语K-under的缩写，意为在K波段之下）的波段。 </p>
+<p>最后，由于最早的雷达使用的是米波，这一波段被称为P波段（P为Previous的缩写，即英语“以往”的字头）。</p>
+<p>目前常用的雷达工作频率范围为220~35000MHz，实际上，仍然有些雷达的工作频率超出了上述范围，如，天波超视距(OTH)雷达的工作频率为4MHz或5MHz，地波超视距雷达的工作频率为2MHz，毫米波雷达在94GHz以上，实验毫米波雷达的工作频率超过240GHz。</p>
+<p>常用的雷达频段如下表所示。</p>
+<ul>
+<li>IEEE标准雷达频率字母频段名称</li>
+</ul>
+<table border=1px>
+<tr>
+<td width=80px>波段命名</td><td width=120px>标准频率范围</td><td width=160px>ITU专用雷达频率范围</td>
+</tr>
+<tr>
+<td>HF</td><td>3~30MHz</td><td></td>
+</tr>
+<tr>
+<td>VHF</td><td>30~300MHz</td><td>138~144MHz<br>216~225MHz</td>
+</tr>
+<tr>
+<td>UHF</td><td>300~1000MHz</td><td>420~450MHz<br>850~942MHz</td>
+</tr>
+<tr>
+<td>L</td><td>1~2GHz</td><td>1215~1400MHz</td>
+</tr>
+<tr>
+<td>S</td><td>2~4GHz</td><td>2300~2500MHz<br>2700~3700MHz</td>
+</tr>
+<tr>
+<td>C</td><td>4~8GHz</td><td>5250~5925MHz</td>
+</tr>
+<tr>
+<td>X</td><td>8~12GHz</td><td>8500~10680MHz</td>
+</tr>
+<tr>
+<td>Ku</td><td>12~18GHz</td><td>13.4~14.0GHz<br>15.7~17.7GHz</td>
+</tr>
+<tr>
+<td>K</td><td>18~27GHz</td><td>24.05~24.25GHz</td>
+</tr>
+<tr>
+<td>Ka</td><td>27~40GHz</td><td>33.4~36GHz</td>
+</tr>
+<tr>
+<td>v</td><td>40~75GHz</td><td>59~64GHz</td>
+</tr>
+<tr>
+<td>w</td><td>75~110GHz</td><td>76~81GHz<br>92~81GHz</td>
+</tr>
+<tr>
+<td>mm</td><td>110~300GHz</td><td>126~100GHz<br>144~149GHz<br>231~235GHz<br>238~248GHz<br></td>
+</tr>
+</table>
+
+<p>＊摘自“IEEE Standard Letter Designations for Radar Frequency Bands", IEEE std. 521-1984.<br />
+＊＊波长和频率的换算关系为：\(\lambda=\frac{v}{f}\)，其中，\(\lambda\)为波长(m)，\(f\)为频率(Hz)，\(v\)为电磁波的传播速度，\(v=299792458m/s\)。</p>
+<p><img alt="" src="http://img4.ph.126.net/tpt17G92bnzuBWgvdSrOaA==/2690056352441579124.gif" /> </p>
+
+
+<h2>1.1 雷达的任务</h2>
+<h3>1.1.1 雷达回波中的可用信息</h3>
+<h4>(1) 目标斜距的测量</h4>
+<p>$$2R=ct_r$$</p>
+<h4>(2) 目标角位置的测量</h4>
+<h4>(3) 相对速度的测量</h4>
+<p>$$f_d=\frac{2\nu_r}{\lambda}$$</p>
+<h4>(4) 目标尺寸和形状</h4>
+<h3>1.2 雷达探测能力--基本雷达方程</h3>
+<p>设雷达发射机功率为\(P_t\) ，当用各向均匀辐射的天线发射时，距雷达\(R\)远处任一点的功率密度\(S^`_1\)等于功率被假想的球面积\(4 \pi R^2\)所除，即</p>
+<p>$$S^`_1=\frac{P_t}{4 \pi R^2}$$</p>
+<p>实际雷达总是使用定向天线将发射机功率集中辐射于某些方向上。天线增益\(G\)用来表示相对于各向同性天线，实际天线在辐射方向上功率增加的倍数。因此，当发射天线增益为\(G\)时，距雷达\(R\)处目标所照射到的功率密度为</p>
+<p>$$S_1=\frac{P_tG}{4 \pi R^2}$$</p>
+<p>目标截获了一部分照射功率并将它们重新辐射于不同方向。用雷达截面积\(\sigma\)来表示被目标截获照射功率后再次辐射回雷达处功率的大小，或，用下式表示在雷达处的回波信号功率密度：</p>
+<p>$$S_2=S_1\frac{\sigma}{4 \pi R^2}=\frac{P_tG}{4 \pi R^2}&middot;\frac{\sigma}{4 \pi R^2}$$</p>
+<p>\(\sigma\)的大小随具体目标而异，它可以表示目标被雷达“看见”的尺寸。雷达接收天线只收集了回波功率的一部分，设天线的有效接收面积为\(A_e\)，则雷达收到的回波功率\(P_r\)为</p>
+<p>$$P_r=A_eS_2=\frac{P_tGA_e\sigma}{(4 \pi )^2R^4}$$</p>
+<p>当接收到的回波功率\(P_r\)等于最小可检测信号\(S_{min}\)时，雷达达到其最大作用距离\(R_{max}\)，超过这个距离后，就不能有效地检测到目标：</p>
+<p>$$R_{max}=[\frac{P_tGA_e\sigma}{(4 \pi )^2S_{min}}]^{1 \over 4}$$</p>
+<p>通常收发共用天线，天线增益\(G\)和它的有效接收面积\(A_e\)具有以下关系：</p>
+<p>$$G=\frac{4 \pi A_e}{\lambda^2}$$</p>
+<p>因此，雷达基本方程可写成以下形式：</p>
+<p>$$R_{max}=[\frac{R_tG^2\lambda^2\sigma}{(4 \pi )^3S_{min}}]^{1 \over 4}=[\frac{P_1A^2_e\sigma}{4 \pi \lambda^2S_{min}}]^{1 \over 4}$$</p>
+<p>该方程可以正确地反映雷达各参数对其检测能力影响的程度，但并不能充分反映实际雷达的性能，这是因为许多影响作用距离的环境和实际因素在方程中没有被考虑。</p>
+
+
+<p>\(\lambda=\frac{v}{f}\)</p>
+
+</TABLE>
+
+<HR>
+<TABLE BORDER="0">
+  <TR>
+    <TD VALIGN="bottom">
+      <FONT SIZE="-2">[<A HREF="./tweets/index.html" target="_blank">tweets</A>]</FONT>
+    </TD>
+    <TD VALIGN="bottom">
+      <FONT SIZE="-2">[<A HREF="http://www.twitter.com/uuspider" target="_blank">gmail</A>]</FONT>
+    </TD>
+    <TD VALIGN="bottom">
+      <FONT SIZE="-2">[<A HREF="http://www.twitter.com/uuspider" target="_blank">163</A>]</FONT>
+    </TD>
+    <TD VALIGN="bottom">
+      <FONT SIZE="-2">[<A HREF="http://www.twitter.com/uuspider" target="_blank">163</A>]</FONT>
+    </TD>
+    <TD VALIGN="bottom">
+      <FONT SIZE="-2">[<A HREF="http://www.twitter.com/uuspider" target="_blank">163</A>]</FONT>
+    </TD>
+    <TD VALIGN="bottom">
+      <FONT SIZE="-2">[<A HREF="http://www.twitter.com/uuspider" target="_blank">163</A>]</FONT>
+    </TD>
+    <TD VALIGN="bottom">
+      <FONT SIZE="-2">[<A HREF="http://www.twitter.com/uuspider" target="_blank">163</A>]</FONT>
+    </TD>
+  </TR>
+</TABLE>
+
+
+</body>
+</html>
