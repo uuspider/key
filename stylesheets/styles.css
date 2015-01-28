@@ -231,7 +231,12 @@ blockquote {
 }
 
 img {
+  text-align: center;
   max-width: 100%;
+}
+
+.middle {
+  text-align: center;
 }
 
 code, pre {
