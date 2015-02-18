@@ -1,0 +1,249 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: #95AFBA;
+  font: 13.9px Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  margin-bottom: 1em;
+}
+
+h1 { margin-bottom: 1em; }
+p { margin: 0 0 1em 0; }
+
+a         { color: #1863a1; }
+a:link    { text-decoration: none; }
+a:visited { color: #1863A1; }
+a:hover   { color: #0181eb; }
+a:active   { color: #0181eb; }
+
+blockquote {
+  /* font: 14px/22px normal helvetica, sans-serif; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* padding-left: 15px; */
+  padding: 10px;
+  border-left: 3px dashed #abc;
+  background-color: #eee;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* Gradient transparent - color - transparent
+http://css-tricks.com/examples/hrs/
+*/
+hr {
+    border: 0px;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    margin: 15px 0;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+.posts li {
+  line-height: 1.75em;
+}
+
+.posts span {
+  color: #ccc;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 70%;
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-size: 115%;
+  text-align: justify;
+  width: 46em;
+  margin: 0 auto;
+  line-height: 1.5em;
+  padding: 3em 2em 2em 2em;
+  border: 1px solid #ddd;
+  background-color: #fbfffd;
+}
+
+.header a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 2em;
+  font-size: 16px;
+}
+
+.title a {
+  color: #a00;
+}
+
+.title a:hover {
+  color: #000;
+}
+
+.header a.extra {
+  color: #aaa;
+  margin-left: 1em;
+  font-size: 13px;
+}
+
+.header a.extra:hover {
+  color: #a00;
+}
+
+.meta {
+  text-align: center;
+  color: #aaa;
+}
+
+.footer {
+  font-size: 80%;
+  color: #666;
+  border-top: 4px solid #eee;
+  margin-top: 2em;
+  overflow: hidden;
+}
+
+.footer .contact {
+  float: left;
+  margin-right: 3em;
+}
+
+.footer .contact a {
+  color: #8085C1;
+}
+
+.footer .rss {
+  margin-top: 1.1em;
+  margin-right: -.2em;
+  float: right;
+}
+
+.footer .rss img {
+  border: 0;
+}
+
+p img {
+  width: 100%;
+}
+
+#home .posts li a {
+  font-size: 92%;
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+#pagetitle {
+  text-align: center;
+}
+
+#pagetitle h2 {
+  font-size: 19px;
+}
+
+/* standard */
+.post pre {
+  font-family: Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, Andale Mono, "MS Gothic", monospace;
+  font-size: 13px;
+  background-color: #333;
+  padding: 0 .4em;
+  overflow: auto;
+  margin: 1em 0;
+  padding: 5px 0 5px 10px;
+}
+
+.post ul, .post ol {
+  margin-left: 1.35em;
+  margin-bottom: 1em;
+}
+
+.post code {
+  padding: 0 .2em;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.post pre code {
+  font-family: Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, Andale Mono, "MS Gothic", monospace;
+  color: white;
+  /* background-color: #eef; */
+  /* background-color: #f8f8f8; */
+  padding: 0 .2em;
+  border: none;
+  background-color: #333;
+  white-space: pre;
+}
+
+/* terminal */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.post pre.terminal code {
+  background-color: #333;
+}
+
+.post h1 {
+  font-size: 140%;
+  margin-bottom: 0.66em;
+}
+
+.post h2 {
+  font-size: 120%;
+  color: #9C9583;
+  margin-bottom: 0.6em;
+}
+.post h3 {
+  font-size: 115%;
+  margin-bottom: 0.8em;
+}
+.post h4 {
+  font-size: 110%;
+  margin-bottom: 0.9em;
+}
+.post h5 {
+  font-size: 100%;
+}
