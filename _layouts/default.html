@@ -10,10 +10,10 @@
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}css/syntax.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
 
     </head>
     <body>
@@ -22,10 +22,8 @@
           <div class="header">
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
             <a class="extra" href="/">HOME</a>
-            <a class="extra" href="http://wiki.tankywoo.com/">WIKI</a>
-            <a class="extra" href="https://github.com/tankywoo">GITHUB</a>
-            <a class="extra" href="/about.html">ABOUT</a>
-            <a class="extra" href="/feed.xml">RSS</a>
+            <a class="extra" href="about.uuspider.com">ABOUT</a>
+            <a class="extra" href="{{ site.baseurl }}feed.xml">RSS</a>
           </div>
 
           {{ content }}
