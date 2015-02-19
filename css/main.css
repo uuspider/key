@@ -130,7 +130,6 @@ header {
   background: linear-gradient(#ddfbfc, #c6eafa);
   position: relative;
   padding: 25px 30px;
-  border-bottom:一知半解 1px solid #B2D2E1;
 }
 header h1 {
   margin: 0;
@@ -148,6 +147,7 @@ header p {
   margin: 0;
   color: #61778B;
   width: 300px;
+  text-align: left;
   font-size: 13px;
 }
 header p.view {
