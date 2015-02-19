@@ -1,5 +1,5 @@
 username: uuspider
-baseurl: 
+baseurl: /
 markdown: redcarpet
 safe: false
 pygments: true
