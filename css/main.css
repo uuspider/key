@@ -140,26 +140,26 @@ strong {
   text-align: left;
   text-shadow: rgba(255, 255, 255, 0.9) 0 1px 0;
 }
-header.without-description h1 {
+.header.without-description h1 {
   margin: 10px 0;
 }
-header p {
+.header p {
   margin: 0;
   color: #61778B;
   width: 300px;
   text-align: left;
   font-size: 13px;
 }
-header p.view {
+.header p.view {
   display: none;
   font-weight: 700;
   text-shadow: rgba(255, 255, 255, 0.9) 0 1px 0;
   -webkit-font-smoothing: antialiased;
 }
-header p.view a {
+.header p.view a {
   color: #06c;
 }
-header p.view small {
+.header p.view small {
   font-weight: 400;
 }
 header ul {
