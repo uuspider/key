@@ -285,6 +285,10 @@ hr {
   height: 1px;
   margin: 0 0 20px;
 }
+.date {
+  color: #61778B;
+  font-size: 13px;
+}
 
 footer {
   width: 640px;
