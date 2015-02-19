@@ -1,37 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="description" content="{{ site.description }}"/>
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcur icon" href="{{site.baseurl}}images/i32.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <title>{{page.title}} - {{site.title}}</title>
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}css/syntax.css">
+    <link rel="shortcur icon" href="{{site.baseurl}}images/i32.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{site.baseurl}}stylesheets/styles.css" />
+    <link rel="stylesheet" href="{{site.baseurl}}stylesheets/pygment_trac.css" />
+    <script src="{{site.baseurl}}javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    </head>
-    <body>
-
-        <div class="site">
-
-          <div class="header">
-            <h1><a href="http://uuspider.com">{{site.title}}</a></h1>
-          </div>
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>uuspider<<a href="mailto:me@gmail.com">e@gmail.com</a></p>
-            </div>
-          </div>
-        </div>
-
-    </body>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+      <h1><a href="http://uuspider.com">{{site.title}}</a></h1>
+        <p>uuspider的技术笔记.</p>
+        <!-- <p class="view"><a href="https://github.com/{{site.username}}/key">View the Project on GitHub</a></p>
+        <ul>
+          <li><a href="https://github.com/{{site.username}}/key/tree/gh-pages">View On <strong>GitHub</strong></a></li>
+        </ul> -->
+      </header>
+      <section>
+        <!-- <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> {{ page.title }} 
+        </h1> -->
+        <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>  
+        </h1>
+{{ content }}
+      </section>
+    </div>
+    <footer>
+      <p>Pages maintained by <a href="http://about.uuspider.com">{{site.username}}</a></p>
+      <p>Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
 </html>

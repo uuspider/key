@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-<div id="pagetitle"><h2>{{ page.title }}</h2></div>
-<small><p class="meta">{{ page.date | date_to_string }}
-{% if page.categories == blank %}
-| {{ page.categories }}
-{% endif %}</p></small>
+<a href="http://uuspider.com">首页</a>>>{{ page.title }}
+<br>
+<br>
 
-<div class="post">
 {{ content }}
-</div>
+
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{skipTags: ["<pre>"]}});</script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
