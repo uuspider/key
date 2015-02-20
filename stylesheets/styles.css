@@ -249,8 +249,12 @@ code, pre {
 pre {
   padding:8px 15px;
   background: #f8f8f8;  
-  border-radius:5px;
   border:1px solid #e5e5e5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
   overflow-x: auto;
 }
 
