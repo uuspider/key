@@ -234,15 +234,9 @@ img {
   max-width: 100%;
 }
 
-code, pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-  color: #333;
-  font-size: 16px;
-  overflow-x: auto;
-}
-
 pre {
   background: #fff;
+  overflow-x: auto;
 }
 
 table {
