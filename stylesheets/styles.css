@@ -236,7 +236,7 @@ img {
 
 pre {
   background: #fff;
-  line-height: 32px;
+  line-height: 200%;
   font-size: 14px;
   overflow-x: auto;
 }
