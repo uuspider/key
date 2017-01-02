@@ -1,6 +1,6 @@
 username: uuspider
 baseurl: /
-markdown: redcarpet
+markdown: kramdown
 safe: false
-pygments: true
+highlighter: rouge
 title: 一知半解
