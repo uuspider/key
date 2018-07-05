@@ -17,3 +17,5 @@ github_username:  uuspider
 
 # Build settings
 markdown: kramdown
+
+paginate: 5
