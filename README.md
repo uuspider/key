@@ -1,2 +1,2 @@
-# Brillouin
-布里渊区 Brillouin Zone
+# by uuspider
+一知半解
