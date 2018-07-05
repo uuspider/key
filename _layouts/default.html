@@ -1,54 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <title>{{page.title}} - {{site.title}}</title>
-    <meta name="Keywords" content="科学，不是科普，数学，物理，公式，雷达，固体物理，凝聚态物理，合成孔径，相控阵，脉冲，多普勒，频段，天线，方向图，傅里叶，调频，薛定谔，自由电子气体，Drude，Sommerfeld" />
-    <meta name="Description" content="uuspider的技术笔记，关于科学和技术。" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <link rel="shortcur icon" href="{{site.baseurl}}images/i32.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="{{site.baseurl}}stylesheets/styles.css" />
-    <link rel="stylesheet" href="{{site.baseurl}}stylesheets/pygment_trac.css" />
-    <script src="{{site.baseurl}}javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  {% include head.html %}
 
-  </head>
   <body>
-    <div class="wrapper">
-      <header>
-      <h1><a href="http://uuspider.com">{{site.title}}</a></h1>
-        <p>uuspider的技术笔记。</p>
-        <!-- <p class="view"><a href="https://github.com/{{site.username}}/key">View the Project on GitHub</a></p>
-        <ul>
-          <li><a href="https://github.com/{{site.username}}/key/tree/gh-pages">View On <strong>GitHub</strong></a></li>
-        </ul> -->
-      </header>
-      <section>
-        <!-- <h1>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> {{ page.title }} 
-        </h1> -->
-        <h1>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>  
-        </h1>
-{{ content }}
-      </section>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
     </div>
-    <footer>
-      <p>Pages maintained by <a href="http://about.uuspider.com">{{site.username}}</a></p>
-      <p>
-        <!-- Site Meter -->
-            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254522348'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1254522348%26show%3Dpic2' type='text/javascript'%3E%3C/script%3E"));</script>
-        <!-- Copyright (c)2009 Site Meter -->
-      </p>
-      <p>Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+    {% include footer.html %}
+
   </body>
+
 </html>

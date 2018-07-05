@@ -1,12 +1,15 @@
 ---
 layout: default
 ---
-<a href="http://uuspider.com">首页</a>&ensp;&raquo;&ensp;{{ page.title }}
-<br>
-<br>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-{{ content }}
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
 
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{skipTags: ["<pre>"]}});</script>
-    <script type="text/javascript" src="{{site.baseurl}}MathJax-2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
 
+</article>
