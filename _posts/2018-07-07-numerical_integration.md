@@ -15,7 +15,7 @@ title: 数值积分实验
 
 >\\( F'(x) = f (x) \\)
 
-可以利用Newton-Leibniz公式计算理论解(准确解)，即
+可以利用Newton-Leibniz公式计算理论解(准确解)：
 
 >\\(\int _a ^b f (x) {\rm d} x = F(x) \vert _a ^b = F(b)-F(a) \\)
 
@@ -31,6 +31,6 @@ title: 数值积分实验
 
 这些点把\\([a, b]\\)分成\\(n\\)个小区间
 
->\\(\Delta _i=[x_{i-1},x_{i}], i=1,2,\cdots,n\\)
+>\\( \Delta _i = [x _{i-1}, x _{i}], i=1,2,\cdots,n \\)
 
-小区间的长度
+小区间的长度为\\( \Delta x _i = x _i - x _{i-1}\\)，取\\(\lambda = max \limits_{1 \leqslant i \leqslant n} \Delta x _i \\)
