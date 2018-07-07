@@ -31,7 +31,7 @@ title: 数值积分实验
 
 >\\( \Delta _i = [x _{i-1}, x _{i}], i=1,2,\cdots,n \\)
 
-小区间的长度为\\( \Delta x_{i} = x_{i} - x_{i-1} \\)，取\\( \lambda = max \limits_{ 1 \leqslant i \leqslant n} \Delta x_i \\)。
+小区间的长度为\\( \Delta x_{i} = x_{i} - x_{i-1} \\)，取\\( \lambda = \max \limits_{ 1 \leqslant i \leqslant n} \Delta x_i \\)。
 
 在区间\\( \Delta _i \\)上任意取点\\( \xi _i \in [x _{i-1}, x _i] \\)，记
 
@@ -41,4 +41,12 @@ title: 数值积分实验
 
 >\\( \int _a ^b f (x) {\rm d} x = \limlimits_{\lambda \to 0} \overset{n}\underset{i=1}{\Sigma} f(\xi _i) \Delta x _i \\)
 
-将\\([a, b]\\)进行等分，则\\( \Delta x _i = \frac{1}{n} (b-a)x _i - x _{i-1} \\)
+将\\([a, b]\\)进行等分，有
+
+>\\( \Delta x _i = \frac{1}{n} (b-a) \\)
+
+>\\( x _i = a + \frac{i}{n} (b-a), i=1,2, \cdots, n \\)
+
+则
+
+>\\( \int _a ^b f (x) {\rm d} x = \limlimits_{\lambda \to 0} \overset{n}\underset{i=1}{\Sigma} f(\xi _i) \Delta x _i \\)
