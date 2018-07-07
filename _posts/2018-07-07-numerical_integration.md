@@ -55,7 +55,7 @@ title: 数值积分实验
 
 若取\\( \xi _i = x _{i-1} \\)，得到左矩阵法：
 
->\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \\)
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \sum _{i=1} ^n f(x_{i-1}) \\)
 
 若取\\( \xi _i = x _{i} \\)，得到右矩阵法：
 
@@ -63,9 +63,10 @@ title: 数值积分实验
 
 若取\\( \xi _i = \frac{x _{i-1} + x _i}{2} \\)，得到中矩阵法：
 
->\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \\)
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \sum _{i=1} ^n f(\frac{x _{i-1} + x _i}{2}) \\)
 
 若取\\( \xi _i = \frac{f(x _{i-1}) + f(x _i)}{2} \\)，得到梯形法：
 
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \sum _{i=1} ^n [f({x _{i-1}) + f(x _i)] \\)
 
 若取\\( \xi _i = \frac{f(x _{i-1}) + 4f(\frac{x _{i-1} + x _i}{2})+ f(x _i)}{6} \\)，得到中矩阵法：
