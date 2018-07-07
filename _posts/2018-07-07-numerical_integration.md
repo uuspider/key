@@ -51,8 +51,21 @@ title: 数值积分实验
 
 >\\( \int _a ^b f(x) {\rm d} x = \lim\limits_{n \to \infty} \\)
 
->\\( \int _a ^b f(x) {\rm d} x \approx \fram{1}{n}(b-a) \\)
+这是数值积分的基本表达式。
 
->\\( \int _a ^b f(x) {\rm d} x \approx \fram{1}{n}(b-a) \sum _{i=1} ^n f(x_i) \\)
+若取\\( \xi _i = x _{i-1} \\)，得到左矩阵法：
 
->\\( \int _a ^b f(x) {\rm d} x \approx \fram{1}{n}(b-a) \\)
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \\)
+
+若取\\( \xi _i = x _{i} \\)，得到右矩阵法：
+
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \sum _{i=1} ^n f(x_i) \\)
+
+若取\\( \xi _i = \frac{x _{i-1} + x _i}{2} \\)，得到中矩阵法：
+
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \\)
+
+若取\\( \xi _i = \frac{f(x _{i-1}) + f(x _i)}{2} \\)，得到梯形法：
+
+
+若取\\( \xi _i = \frac{f(x _{i-1}) + 4f(\frac{x _{i-1} + x _i}{2})+ f(x _i)}{6} \\)，得到中矩阵法：
