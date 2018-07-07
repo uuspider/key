@@ -73,13 +73,11 @@ title: 数值积分实验
 
 >\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{6n}(b-a) \sum _{i=1} ^n [f(x _{i-1}) + 4f(\frac{x _{i-1} + x _i}{2}) + f(x _i)] \\)
 
-- 例1-1 使用矩形法、梯形法、Simpson法计算\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} \\)。
+- 例1-1 使用矩形法、梯形法、Simpson法计算\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} x \\)。
 
 理论解：
 
 >\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} x = \arctan x \vert _0 ^1 = \frac{\pi}{4} \\)
-
-保留15位有效数字为0.785398163397448。
 
 数值解法：
 
@@ -142,4 +140,26 @@ title: 数值积分实验
 
 可以看到Simpson法的精度显著优于矩形法和梯形法。
 
-- 例1-2 使用Simpson法计算\\( \int _1 ^2 \frac{\sin x}{x} {\rm d} x \\)和\\( \frac{1}{\sqrt{2\pi}} \int _0 ^3 e ^{-\frac{x^2}{2}} {\rm d} x \\)。
+- 例1-2 (1) 使用Simpson法计算\\( \int _1 ^2 \frac{\sin x}{x} {\rm d} x \\)。
+
+    import math
+    def f(x):
+        return math.sin(x)/x
+    def x(i,n,a,b):
+        return a+(b-a)*i/n
+    def simpson(n,a,b):
+        i = 1.0
+        f_sum = 0.0
+        while i <= n:
+            f_sum += (f(x(i-1,n,a,b)) + 4*f((x(i-1,n,a,b)+x(i,n,a,b))/2.0) + f(x(i,n,a,b)))
+            i += 1
+        result = f_sum / (6*n)
+        result = "%.15f" % result
+        return result
+    print simpson(200,1,2)
+
+结果为：
+
+    0.659329906435525
+
+- 例1-2 (2) 使用Simpson法计算\\( \frac{1}{\sqrt{2\pi}} \int _0 ^3 e ^{-\frac{x^2}{2}} {\rm d} x \\)。
