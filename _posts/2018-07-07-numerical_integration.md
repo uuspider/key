@@ -49,4 +49,4 @@ title: 数值积分实验
 
 则
 
->\\( \int _a ^b f (x) {\rm d} x = \limlimits_{\lambda \to 0} \overset{n}\underset{i=1}{\Sigma} f(\xi _i) \Delta x _i \\)
+>\\( \int _a ^b f (x) {\rm d} x = \lim\limits_{n \to \infty} \\)
