@@ -193,7 +193,7 @@ title: 数值积分实验
 
 >\\( \Delta \sigma _1 , \Delta \sigma _2 , \cdots , \Delta \sigma _n \\)
 
-其中\\(  \Delta \sigma _i \\)表示第\\( i \\)个闭域的面积，\\( \Vert \Delta \sigma _i \Vert \\)表示\\( \Delta \sigma _i \\)的直径，取\\( \lambda = \max \limits_{ 1 \leqslant i \leqslant n} \Vert \Delta \sigma _i \Vert \\)。
+其中\\( \Delta \sigma _i \\)表示第\\( i \\)个闭域的面积，\\( \Vert \Delta \sigma _i \Vert \\)表示\\( \Delta \sigma _i \\)的直径，取\\( \lambda = \max \limits _{ 1 \leqslant i \leqslant n} \Vert \Delta \sigma _i \Vert \\)。
 
 在每个\\(  \Delta \sigma _i \\)上任取一点\\( (\xi _i , \eta _i) \\)，记
 
