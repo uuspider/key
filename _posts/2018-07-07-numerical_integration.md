@@ -67,8 +67,18 @@ title: 数值积分实验
 
 若取\\( \xi _i = \frac{f(x _{i-1}) + f(x _i)}{2} \\)，得到梯形法：
 
->\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{2n}(b-a) \sum _{i=1} ^n [f({x _{i-1}) + f(x _i)] \\)
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{2n}(b-a) \sum _{i=1} ^n [f(x _{i-1}) + f(x _i)] \\)
 
 若取\\( \xi _i = \frac{f(x _{i-1}) + 4f(\frac{x _{i-1} + x _i}{2})+ f(x _i)}{6} \\)，得到Simpson法：
 
->\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{6n}(b-a) \sum _{i=1} ^n [f({x _{i-1}) + 4f(\frac{x _{i-1} + x _i}{2}) + f(x _i)] \\)
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{6n}(b-a) \sum _{i=1} ^n [f(x _{i-1}) + 4f(\frac{x _{i-1} + x _i}{2}) + f(x _i)] \\)
+
+例1-1 使用矩形法、梯形法、Simpson法计算\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} \\)。
+
+理论解
+
+>\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} = \arctan x \vert _0 ^1 = \frac{\pi}{4} \\)
+
+保留15位有效数字为0.785398163397448。
+
+数值解法：
