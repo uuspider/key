@@ -35,7 +35,7 @@ title: 数值积分实验
 
 在区间\\( \Delta _i \\)上任意取点\\( \xi _i \in [x _{i-1}, x _i] \\)，记
 
->\\( S = \overset{n}\underset{i=1}{\Sigma} f(\xi _i) \Delta x _i \\)
+>\\( S = \overset{n} \underset{i=1} { \Sigma } f( \xi _i ) \Delta x_i \\)
 
 当\\( \lambda \to 0 \\)时，若\\( S \\)的极限存在，就称这个极限为函数\\( f(x) \\)在区间\\([a, b]\\)上的定积分：
 
