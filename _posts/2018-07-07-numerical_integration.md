@@ -39,7 +39,7 @@ title: 数值积分实验
 
 当\\( \lambda \to 0 \\)时，若\\( S \\)的极限存在，就称这个极限为函数\\( f(x) \\)在区间\\([a, b]\\)上的定积分：
 
->\\( \int _a ^b f (x) {\rm d} x = \lim\limits _{ \lambda \to 0} \overset{n}\underset{i=1}{\sum} f(\xi _i) \Delta x _i \\)
+>\\( \int _a ^b f (x) {\rm d} x = \lim\limits _{ \lambda \to 0} \sum _{i=1} ^n f(\xi _i) \Delta x _i \\)
 
 将\\([a, b]\\)进行等分，有
 
