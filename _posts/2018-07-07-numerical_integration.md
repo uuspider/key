@@ -51,7 +51,7 @@ title: 数值积分实验
 
 >\\( \int _a ^b f(x) {\rm d} x = \lim\limits _{n \to \infty} \sum _{i=1} ^n f(\xi_i) \\)
 
-这是数值积分的基本表达式。
+该式反映了数值积分的几何意义。
 
 若取\\( \xi _i = x _{i-1} \\)，得到左矩阵法：
 
@@ -186,3 +186,25 @@ title: 数值积分实验
 结果为：
 
     0.166216700655656
+
+### 2.2 二重积分
+
+设函数\\( z = f(x,y) \\)是有界闭域\\( D \\)上的有界函数，将\\( D \\)任意分成\\( n \\)个小闭区域
+
+>\\( \Delta \sigma _1 , \Delta \sigma _2 , \cdots , \Delta \sigma _n \\)
+
+其中\\(  \Delta \sigma _i \\)表示第\\( i \\)个闭域的面积，\\( \Vert \Delta \sigma _i \Vert \\)表示\\( \Delta \sigma _i \\)的直径，取\\( \lambda = \max \limits_{ 1 \leqslant i \leqslant n} \Vert \Delta \sigma _i \Vert \\)。
+
+在每个\\(  \Delta \sigma _i \\)上任取一点\\( (\xi _i , \eta _i) \\)，记
+
+>\\( S = \sum _{i=1} ^n f( \xi_i , \eta_i ) \Delta \sigma _i \\)
+
+当\\( \lambda \to 0 \\)时，若\\( S \\)的极限存在，就称这个极限为函数\\( f(x,y) \\)在区间\\( D \\)上的定积分：
+
+>\\( \iint _D f (x,y) {\rm d} \sigma = \lim\limits _{ \lambda \to 0} \sum _{i=1} ^n f(\xi _i , \eta _i) \Delta \sigma _i \\)
+
+二重积分表示以\\( z = f(x,y) \\)为顶，以\\( D \\)为底的曲顶圆柱体的体积。
+
+取\\( \Delta \sigma _i \\) 为等分矩形域\\( \Delta x \Delta y \\)，\\( \xi _i , \eta _i \\)为区域\\( \Delta \sigma _i \\)的中心点\\( P _i \\)，则
+
+>\\( \iint _D f (x,y) {\rm d} \sigma = \lim\limits _{ \lambda \to 0} \sum _{i=1} ^n f(P _i) \Delta x \Delta y \\)
