@@ -73,12 +73,69 @@ title: 数值积分实验
 
 >\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{6n}(b-a) \sum _{i=1} ^n [f(x _{i-1}) + 4f(\frac{x _{i-1} + x _i}{2}) + f(x _i)] \\)
 
-例1-1 使用矩形法、梯形法、Simpson法计算\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} \\)。
+- 例1-1 使用矩形法、梯形法、Simpson法计算\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} \\)。
 
-理论解
+理论解：
 
 >\\( \int _0 ^1 \frac{1}{1+x^2} {\rm d} = \arctan x \vert _0 ^1 = \frac{\pi}{4} \\)
 
 保留15位有效数字为0.785398163397448。
 
 数值解法：
+
+    #!/usr/bin/env python
+    import math
+    RESULT = math.pi/4.0
+
+    def f(x):
+        return 1.0/(1+x**2)
+    def x(i,n):
+        return i/n
+    # 中矩形法
+    def rectangle_m(n):
+        i = 1.0
+        f_sum = 0.0
+        while i <= n:
+            f_sum += (f((x(i-1,n)+x(i,n))/2))
+            i += 1
+        result = f_sum / n
+        err = abs(result - RESULT)
+        err = "%e" % err
+        result = "%.15f" % result
+        return result,err
+    # 梯形法
+    def trapzoid(n):
+        i = 1.0
+        f_sum = 0.0
+        while i <= n:
+            f_sum += (f(x(i-1,n)) + f(x(i,n)))
+            i += 1
+        result = f_sum / (2*n)
+        err = abs(result - RESULT)
+        err = "%e" % err
+        result = "%.15f" % result
+        return result,err
+    # simpson方法
+    def simpson(n):
+        i = 1.0
+        f_sum = 0.0
+        while i <= n:
+            f_sum += (f(x(i-1,n)) + 4*f((x(i-1,n)+x(i,n))/2.0) + f(x(i,n)))
+            i += 1
+        result = f_sum / (6*n)
+        err = abs(result - RESULT)
+        err = "%e" % err
+        result = "%.15f" % result
+        return result,err
+
+    print "理论解：","%.15f" % RESULT
+    print "矩形法：",rectangle_m(50),rectangle_m(100),rectangle_m(200)
+    print "梯形法：",trapzoid(50),trapzoid(100),trapzoid(200)
+    print "Simpson法：",simpson(50),simpson(100),simpson(200)
+
+输出为
+
+    理论解： 0.785398163397448
+    矩形法： ('0.785406496730751', '8.333333e-06') ('0.785400246730781', '2.083333e-06') ('0.785398684230781', '5.208333e-07')
+    梯形法： ('0.785381496730814', '1.666667e-05') ('0.785393996730782', '4.166667e-06') ('0.785397121730782', '1.041667e-06')
+    Simpson： ('0.785398163397438', '9.992007e-15') ('0.785398163397448', '1.110223e-16') ('0.785398163397448', '5.551115e-16')
