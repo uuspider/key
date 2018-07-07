@@ -49,13 +49,13 @@ title: 数值积分实验
 
 则
 
->\\( \int _a ^b f(x) {\rm d} x = \lim\limits _{n \to \infty} \\)
+>\\( \int _a ^b f(x) {\rm d} x = \lim\limits _{n \to \infty} \sum _{i=1} ^n f(\xi_i) \\)
 
 这是数值积分的基本表达式。
 
 若取\\( \xi _i = x _{i-1} \\)，得到左矩阵法：
 
->\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \sum _{i=1} ^n f(x _{i-1}) \\)
+>\\( \int _a ^b f(x) {\rm d} x \approx \frac{1}{n}(b-a) \sum _{i=1} ^n f( x _{i-1} ) \\)
 
 若取\\( \xi _i = x _{i} \\)，得到右矩阵法：
 
