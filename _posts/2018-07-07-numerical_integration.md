@@ -142,6 +142,7 @@ title: 数值积分实验
 
 - 例1-2 (1) 使用Simpson法计算\\( \int _1 ^2 \frac{\sin x}{x} {\rm d} x \\)。
 
+数值解法：
 
     import math
     def f(x):
@@ -164,3 +165,24 @@ title: 数值积分实验
     0.659329906435525
 
 - 例1-2 (2) 使用Simpson法计算\\( \frac{1}{\sqrt{2\pi}} \int _0 ^3 e ^{-\frac{x^2}{2}} {\rm d} x \\)。
+
+数值解法：
+
+    import math
+
+    def f(x):
+        return math.exp(-(x**2) / 2) / math.sqrt(2*math.pi)
+    def x(i,n,a,b):
+        return a+(b-a)*i/n
+    def simpson(n,a,b):
+        f_sum = 0.0
+        for i in range(n):
+            f_sum += (f(x(i,n,a,b)) + 4.0*f((x(i,n,a,b)+x(i+1,n,a,b))/2.0) + f(x(i+1,n,a,b)))
+        result = f_sum / (6.0*n)
+        result = "%.15f" % result
+        return result
+    print simpson(200,0.0,3.0)
+
+结果为：
+
+    0.166216700655656
