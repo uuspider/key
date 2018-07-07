@@ -31,7 +31,7 @@ title: 数值积分实验
 
 >\\( \Delta _i = [x _{i-1}, x _{i}], i=1,2,\cdots,n \\)
 
-小区间的长度为\\( \Delta x_{i} = x_{i} - x_{i-1} \\)，取\\( \lambda = max \limits _{1 \leqslant i \leqslant n} \Delta x _i \\)。
+小区间的长度为\\( \Delta x_{i} = x_{i} - x_{i-1} \\)，取\\( \lambda = max \limits_{1 \leqslant i \leqslant n} \Delta x_i \\)。
 
 在区间\\( \Delta _i \\)上任意取点\\( \xi _i \in [x _{i-1}, x _i] \\)，记
 
