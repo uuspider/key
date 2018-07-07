@@ -142,6 +142,7 @@ title: 数值积分实验
 
 - 例1-2 (1) 使用Simpson法计算\\( \int _1 ^2 \frac{\sin x}{x} {\rm d} x \\)。
 
+
     import math
     def f(x):
         return math.sin(x)/x
