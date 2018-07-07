@@ -49,4 +49,10 @@ title: 数值积分实验
 
 则
 
->\\( \int _a ^b f (x) {\rm d} x = \lim\limits_{n \to \infty} \\)
+>\\( \int _a ^b f(x) {\rm d} x = \lim\limits_{n \to \infty} \\)
+
+>\\( \int _a ^b f(x) {\rm d} x \approx \fram{1}{n}(b-a) \\)
+
+>\\( \int _a ^b f(x) {\rm d} x \approx \fram{1}{n}(b-a) \sum _{i=1} ^n f(x_i) \\)
+
+>\\( \int _a ^b f(x) {\rm d} x \approx \fram{1}{n}(b-a) \\)
