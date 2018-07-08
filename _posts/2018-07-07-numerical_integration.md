@@ -98,7 +98,7 @@ title: 数值积分实验
             i += 1
         result = f_sum / n
         err = abs(result - RESULT)
-        err = "%e" % err
+        err = "%.2e" % err
         result = "%.15f" % result
         return result,err
     # 梯形法
@@ -110,7 +110,7 @@ title: 数值积分实验
             i += 1
         result = f_sum / (2*n)
         err = abs(result - RESULT)
-        err = "%e" % err
+        err = "%.2e" % err
         result = "%.15f" % result
         return result,err
     # simpson方法
@@ -122,7 +122,7 @@ title: 数值积分实验
             i += 1
         result = f_sum / (6*n)
         err = abs(result - RESULT)
-        err = "%e" % err
+        err = "%.2e" % err
         result = "%.15f" % result
         return result,err
 
@@ -134,9 +134,9 @@ title: 数值积分实验
 输出为
 
     理论解： 0.785398163397448
-    矩形法： ('0.785406496730751', '8.333333e-06') ('0.785400246730781', '2.083333e-06') ('0.785398684230781', '5.208333e-07')
-    梯形法： ('0.785381496730814', '1.666667e-05') ('0.785393996730782', '4.166667e-06') ('0.785397121730782', '1.041667e-06')
-    Simpson： ('0.785398163397438', '9.992007e-15') ('0.785398163397448', '1.110223e-16') ('0.785398163397448', '5.551115e-16')
+    矩形法： ('0.785406496730751', '8.33e-06') ('0.785400246730781', '2.08e-06') ('0.785398684230781', '5.21e-07')
+    梯形法： ('0.785381496730814', '1.67e-05') ('0.785393996730782', '4.17e-06') ('0.785397121730782', '1.04e-06')
+    Simpson法： ('0.785398163397438', '9.99e-15') ('0.785398163397448', '1.11e-16') ('0.785398163397448', '5.55e-16')
 
 可以看到Simpson法的精度显著优于矩形法和梯形法。
 
@@ -226,6 +226,39 @@ title: 数值积分实验
 >\\( = \frac{1}{2} \\)
 
 数值解法：
+
+    #!/usr/bin/env python
+    import math
+    RESULT = 0.5
+
+    def f(x,y):
+        return x*y+y**3.0
+    def x(i,n,a,b):
+        return a+(b-a)*i/n
+    def y(i,n,a,b):
+        return a+(b-a)*i/n
+    def int_cylinder(m,n,ax,bx,ay,by):
+        ax = float(ax)
+        bx = float(bx)
+        ay = float(ay)
+        by = float(by)
+        f_sum = 0.0
+        for i in range(m):
+            xx = (x(i,m,ax,bx)+x(i+1,m,ax,bx))/2
+            for j in range(n):
+                yy = (y(j,n,ay,by)+y(j+1,n,ay,by))/2
+                f_sum += f(xx,yy)
+        result = f_sum * ((bx-ax)/m) * ((by-ay)/n)
+        err = abs(result - RESULT)
+        err = "%.2e" % err
+        result = "%.15f" % result
+        return result,err
+
+    print int_cylinder(100,100,0,1,0,1)
+
+输出为：
+
+    ('0.499987499999999', '1.25e-05')
 
 - 例2-2 计算\\( \iint _D xy {\rm d} \sigma \\)，其中\\( D \\)为\\( y=x \\)和\\( y=x^2 \\)围成的区域。
 
