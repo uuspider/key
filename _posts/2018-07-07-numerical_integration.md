@@ -420,6 +420,7 @@ python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算
 
 (2) 解法：
 
+    #!/usr/bin/env python
     import numpy as np
     import math
     from scipy.integrate import dblquad
