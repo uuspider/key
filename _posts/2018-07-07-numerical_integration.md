@@ -209,6 +209,8 @@ title: 数值积分实验
 
 >\\( \iint _D f (x,y) {\rm d} \sigma = \lim\limits _{ \lambda \to 0} \sum _{i=1} ^n f(P _i) \Delta x \Delta y \\)
 
+这种方法称为单点柱体法。
+
 - 例2-1 计算\\( \iint _D (xy+y^3) {\rm d} \sigma \\)，其中\\( D: 0 \leqslant x \leqslant 1 , 0 \leqslant y \leqslant 1 \\)。
 
 - 例2-2 计算\\( \iint _D xy {\rm d} \sigma \\)，其中\\( D \\)为\\( y=x \\)和\\( y=x^2 \\)围成的区域。
