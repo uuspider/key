@@ -436,7 +436,9 @@ python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算
 
     (26.410018917641466, 2.932101108315151e-13)
 
-- 例3-4 计算三重积分\\( \iiint _{\Omega} y \sin x + z \cos x {\rm d} \upsilon \\)，其中\\( \Omega : 0 \leqslant x \leqslant \pi , 0 \leqslant y \leqslant 1 , -1 \leqslant z \leqslant 1 \\)。
+- 例3-4 计算三重积分\\( \iiint _{\Omega} y \sin x + z \cos x {\rm d} \upsilon \\)，其中
+
+>\\( \Omega : 0 \leqslant x \leqslant \pi , 0 \leqslant y \leqslant 1 , -1 \leqslant z \leqslant 1 \\)
 
 数值解法：
 
