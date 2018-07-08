@@ -339,11 +339,13 @@ title: 数值积分实验
 
     0.121888425678087
 
-### 3. scipy中的数值积分函数
+### 3. python中的数值积分模块
 
 #### 3.1 一元函数积分
 
-python的scipy库中有很多数值积分函数，其具体用法可使用`dir(scipy.integrate)`和`help(scipy.integrate.xxx)`查看。
+python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算中最常用的一个模块，其积分函数的具体用法可使用`dir(scipy.integrate)`和`help(scipy.integrate.xxx)`查看。
+
+[ref01]:https://pypi.org/ "python库"
 
 - 例3-1 使用梯形法计算\\( \int _0 ^{2\pi} e ^{ -0.5x } \sin (t + \frac{\pi}{4}) {\rm d} \sigma \\)。
 
@@ -384,3 +386,7 @@ python的scipy库中有很多数值积分函数，其具体用法可使用`dir(s
 输出为：
 
     (3.1415926535897936, 3.4878684980086326e-14)
+
+`quad()`有一些参数可以设置，通过`import scipy; help(scipy.integrate.quad)`查看。
+
+#### 3.2 多重积分
