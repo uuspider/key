@@ -228,7 +228,6 @@ title: 数值积分实验
 数值解法：
 
     #!/usr/bin/env python
-    import math
     RESULT = 0.5
 
     def f(x,y):
@@ -275,7 +274,6 @@ title: 数值积分实验
 数值解法：
 
     #!/usr/bin/env python
-    import math
     RESULT = 1.0/24.0
 
     def f(x,y):
@@ -309,3 +307,34 @@ title: 数值积分实验
 - 例2-3 计算\\( \iint _D \sin \frac{3x+y}{5} e ^{ -x ^2 -xy } {\rm d} \sigma \\)，其中\\( D \\)为\\( y=2x \\)和\\( y=x^2 \\)围成的区域。
 
 数值解法：
+
+首先确定积分区域\\( D \\)的坐标区间为\\( 0 \leqslant x \leqslant 2, x ^2 \leqslant y \leqslant 2x \\)，因此
+
+    #!/usr/bin/env python
+    import math
+
+    def f(x,y):
+        return math.sin((3*x+y)/5) * math.exp(-x**2-x*y)
+    def x(i,n,a,b):
+        return a+(b-a)*i/n
+
+    def int_cylinder(n,ax,bx):
+        ax = float(ax)
+        bx = float(bx)
+        f_sum = 0.0
+        for i in range(n):
+            xx = (x(i,n,ax,bx)+x(i+1,n,ax,bx))/2
+            y1 = x(i+1,n,ax,bx) ** 2
+            y2 = x(i+1,n,ax,bx) * 2
+            for j in range(n):
+                yy = (x(j,n,y1,y2)+x(j+1,n,y1,y2))/2
+                f_sum = f_sum + f(xx,yy) * ((bx-ax)/n) * ((y2-y1)/n)
+        result = f_sum
+        result = "%.15f" % result
+        return result
+
+    print int_cylinder(1000,0,2)
+
+输出为：
+
+    0.121888425678087
