@@ -208,3 +208,9 @@ title: 数值积分实验
 取\\( \Delta \sigma _i \\) 为等分矩形域\\( \Delta x \Delta y \\)，\\( \xi _i , \eta _i \\)为区域\\( \Delta \sigma _i \\)的中心点\\( P _i \\)，则
 
 >\\( \iint _D f (x,y) {\rm d} \sigma = \lim\limits _{ \lambda \to 0} \sum _{i=1} ^n f(P _i) \Delta x \Delta y \\)
+
+- 例2-1 计算\\( \iint _D (xy+y^3) {\rm d} \sigma \\)，其中\\( D: 0 \leqslant x \leqslant 1 , 0 \leqslant y \leqslant 1 \\)。
+
+- 例2-2 计算\\( \iint _D xy {\rm d} \sigma \\)，其中\\( D \\)为\\( y=x \\)和\\( y=x^2 \\)围成的区域。
+
+- 例2-3 计算\\( \iint _D \sin \frac{3x+y}{5} e ^{ -x ^2 -xy } {\rm d} \sigma \\)，其中\\( D \\)为\\( y=2x \\)和\\( y=x^2 \\)围成的区域。
