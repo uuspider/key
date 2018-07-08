@@ -347,7 +347,7 @@ python的scipy库中有很多数值积分函数，其具体用法可使用`dir(s
 
 - 例3-1 使用梯形法计算\\( \int _0 ^{2\pi} e ^{ -0.5x } \sin (t + \frac{\pi}{4}) {\rm d} \sigma \\)。
 
-数值解法：
+使用函数`trapz()`：
 
     #!/usr/bin/env python
     import math
@@ -365,3 +365,22 @@ python的scipy库中有很多数值积分函数，其具体用法可使用`dir(s
 输出为：
 
     0.811859633350380
+
+- 例3-2 使用Simpson法计算\\( \int _0 ^1 \frac{4}{1+x^2} {\rm d} x \\)。
+
+使用函数`quad()`：
+
+    #!/usr/bin/env python
+    import numpy as np
+    from scipy.integrate import quad
+
+    def f(x):
+        return 4.0/(1+x**2)
+
+    x = np.linspace(0, 1, 200)
+    result = quad(lambda x: f(x), 0, 1)
+    print result
+
+输出为：
+
+    (3.1415926535897936, 3.4878684980086326e-14)
