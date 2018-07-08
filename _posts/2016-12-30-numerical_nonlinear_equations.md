@@ -1,9 +1,51 @@
 ---
 layout: post
-title: 数值计算方法
+title: 非线性方程数值解法
 ---
 
-## 非线性方程的数值解法
+### 1. 使用 jupyter 调试程序
+
+本文及其后的几篇总结介绍 python 在科学计算中的基本应用方法。
+
+建议安装 jupyter，使用 `jupyter notebook` 练习语法和调试程序：
+
+    $ pip3 install --upgrade jupyter  # 安装jupyter
+    $ python3 -c "import jupyter"  # 查看是否安装成功
+    $ jupyter notebook  # 启动jupyter服务
+
+在浏览器中访问 http://localhost:8888 就可以打开 jupyter notebook。
+
+关于 jupyter 的使用方法，可点击 jupyter notebook 中的 help 菜单查看或访问[在线文档][ref01]。
+
+[ref01]:http://ipython.org/notebook.html "http://ipython.org/notebook.html"
+
+### 2. 问题背景
+
+科学研究和工程实践中，求解方程(组)是最常用的数学过程，几百年来，工程师和数学家研究了各种各样的方程解法。
+
+对于方程 \\( f(x) = 0 \\)，当\\( f(x) \\)为线性函数时，称之为线性方程，当\\( f(x) \\)为非线性函数时，称之为非线性方程。
+
+线性方程的求解方法很多，后文将开专题详细介绍。
+
+当\\( f(x) \\)为\\( n \\)次代数多项式时，称上述方程为\\( n \\)次代数方程，当\\( n \geqslant 5 \\)时，没有求根公式可用；当\\( f(x) \\)含有三角函数、指数函数、对数函数等形式时，相应的方程称为超越方程，这类方程的精确求解一般是不可行的，甚至解的存在性、解的个数也难以判断。
+
+工程上，根据对具体施工的精度要求，设计数值解法，可以满足计算要求，解决很多实际问题。
+
+### 3. 迭代方法
+
+### 3.1 二分法
+
+设函数\\( f(x) \\)在区间\\( [a, b] \\)上连续，且\\( f(a) \cdot f(b) < 0 \\)，可知方程\\( f(x) = 0 \\)在\\( [a, b] \\)内一定有解。
+
+对于预先给定的精度\\( \varepsilon > 0 \\)，只要二分次数\\( n \\)满足
+
+>\\( n > \frac{\ln (b-a) - \ln (2 \varepsilon)}{\ln 2} \\)
+
+便有
+
+>\\( \vert x ^* - x _n \vert < \varepsilon \\)
+
+\\( x _n \\)就是满足精度要求的近似解。(式中 \\( X ^*\\) 为方程的精确解。)
 
 ### 迭代法
 
@@ -151,5 +193,3 @@ title: 数值计算方法
             l[i] = l[i]*ll
         result = result + y[i]*l[i]
     print result
-
-
