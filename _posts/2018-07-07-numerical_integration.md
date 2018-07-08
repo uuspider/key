@@ -144,6 +144,7 @@ title: 数值积分实验
 
 数值解法：
 
+    #!/usr/bin/env python
     import math
     def f(x):
         return math.sin(x)/x
@@ -168,6 +169,7 @@ title: 数值积分实验
 
 数值解法：
 
+    #!/usr/bin/env python
     import math
 
     def f(x):
@@ -212,6 +214,18 @@ title: 数值积分实验
 这种方法称为单点柱体法。
 
 - 例2-1 计算\\( \iint _D (xy+y^3) {\rm d} \sigma \\)，其中\\( D: 0 \leqslant x \leqslant 1 , 0 \leqslant y \leqslant 1 \\)。
+
+理论解：
+
+>\\( \iint _D (xy+y^3) {\rm d} \sigma = \int _0 ^1 {\rm d} x \int _0 ^1 (xy+y^3) {\rm d} y \\)
+
+>\\( = \int _0 ^1 x \frac{y^2}{2} + \frac{y^4}{4} \vert _0 ^1 {\rm d} x \\)
+
+>\\( = \int _0 ^1 (\frac{x}{2} + \frac{1}{4}) {\rm d} x \\)
+
+>\\( = \frac{1}{2} \\)
+
+数值解法：
 
 - 例2-2 计算\\( \iint _D xy {\rm d} \sigma \\)，其中\\( D \\)为\\( y=x \\)和\\( y=x^2 \\)围成的区域。
 
