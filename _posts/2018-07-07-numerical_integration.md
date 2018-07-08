@@ -338,3 +338,30 @@ title: 数值积分实验
 输出为：
 
     0.121888425678087
+
+### 3. scipy中的数值积分函数
+
+#### 3.1 一元函数积分
+
+python的scipy库中有很多数值积分函数，其具体用法可使用`dir(scipy.integrate)`和`help(scipy.integrate.xxx)`查看。
+
+- 例3-1 使用梯形法计算\\( \int _0 ^{2\pi} e ^{ -0.5x } \sin (t + \frac{\pi}{4}) {\rm d} \sigma \\)。
+
+数值解法：
+
+    #!/usr/bin/env python
+    import math
+    import numpy as np
+    from scipy.integrate import trapz
+
+    def f(x):
+        return np.sin(x+math.pi/4) * np.exp(-0.5*x)
+
+    x = np.linspace(0, 2*math.pi, 2000)
+    result = trapz(f(x),x)
+    result = "%.15f" % result
+    print result
+
+输出为：
+
+    0.811859633350380
