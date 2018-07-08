@@ -229,4 +229,19 @@ title: 数值积分实验
 
 - 例2-2 计算\\( \iint _D xy {\rm d} \sigma \\)，其中\\( D \\)为\\( y=x \\)和\\( y=x^2 \\)围成的区域。
 
+理论解：
+
+>\\( \iint _D (xy+y^3) {\rm d} \sigma = \int _0 ^1 {\rm d} x \int _{x^2} ^x xy {\rm d} y \\)
+
+>\\( = \int _0 ^1 x \frac{y^2}{2} \vert _{x^2} ^x {\rm d} x \\)
+
+>\\( = \int _0 ^1 (\frac{x^3}{2} - \frac{x^5}{2}) {\rm d} x \\)
+
+>\\( = \frac{1}{24} \\)
+
+数值解法：
+
+
 - 例2-3 计算\\( \iint _D \sin \frac{3x+y}{5} e ^{ -x ^2 -xy } {\rm d} \sigma \\)，其中\\( D \\)为\\( y=2x \\)和\\( y=x^2 \\)围成的区域。
+
+数值解法：
