@@ -343,11 +343,12 @@ title: 数值积分实验
 
 #### 3.1 一元函数积分
 
-python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算中最常用的一个模块，其积分函数的具体用法可使用`dir(scipy.integrate)`和`help(scipy.integrate.xxx)`查看。
+python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算中最常用的一个模块，其积分函数的具体用法可使用`help(scipy.integrate)`或到[官方文档][ref02]查看。
 
 [ref01]:https://pypi.org/ "python库"
+[ref02]:https://docs.scipy.org/doc/scipy/reference/tutorial/integrate.html "scipy文档"
 
-- 例3-1 使用梯形法计算\\( \int _0 ^{2\pi} e ^{ -0.5x } \sin (t + \frac{\pi}{4}) {\rm d} \sigma \\)。
+- 例3-1 使用梯形法计算\\( \int _0 ^{2\pi} e ^{ -0.5x } \sin (x + \frac{\pi}{4}) {\rm d} x \\)。
 
 使用函数`trapz()`：
 
@@ -390,3 +391,46 @@ python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算
 `quad()`有一些参数可以设置，通过`import scipy; help(scipy.integrate.quad)`查看。
 
 #### 3.2 多重积分
+
+使用scipy计算多重积分可使用`dblquad`, `tplquad`, `nquad`。
+
+- 例3-3 对于不同的积分区域\\( D \\)，计算\\( \iint _D xy + e ^x {\rm d} \sigma \\)。
+
+(1) \\( D: 0 \leqslant x \leqslant 1 , 0 \leqslant y \leqslant 2 \\)
+
+(2) \\( D: 0 \leqslant y \leqslant 2 , y \leqslant x \leqslant 2y \\)
+
+(1) 解法：
+
+    #!/usr/bin/env python
+    import numpy as np
+    import math
+    from scipy.integrate import dblquad
+
+    def f(x,y):
+        return x * y+ math.e ** x
+
+    result = dblquad(lambda x, y: f(x,y), 0, 2, lambda x: 0, lambda x: 1)
+
+    print result
+
+输出：
+
+    (4.43656365691809, 4.9255751221256473e-14)
+
+(2) 解法：
+
+    import numpy as np
+    import math
+    from scipy.integrate import dblquad
+
+    def f(x,y):
+        return x * y+ math.e ** x
+
+    result = dblquad(lambda x, y: f(x,y), 0, 2, lambda x: x, lambda x: 2*x)
+
+    print result
+
+输出：
+
+    (26.410018917641466, 2.932101108315151e-13)
