@@ -434,3 +434,22 @@ python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算
 输出：
 
     (26.410018917641466, 2.932101108315151e-13)
+
+- 例3-4 计算三重积分\\( \iiint _{\Omega} y \sin x + z \cos x {\rm d} \upsilon \\)，其中\\( \Omega : 0 \leqslant x \leqslant \pi , 0 \leqslant y \leqslant 1 , -1 \leqslant z \leqslant 1 \\)。
+
+数值解法：
+
+    #!/usr/bin/env python
+    import numpy as np
+    import math
+    from scipy.integrate import tplquad
+    def f(x,y,z):
+        return y*np.sin(x) + z*np.cos(x)
+
+    result = tplquad(lambda z, y, x: f(x,y,z), 0, math.pi, lambda x: 0, lambda x: 1, lambda x,y: -1, lambda x,y: 1)
+
+    print result
+
+输出：
+
+    (1.9999999999999998, 2.2204460492503128e-14)
