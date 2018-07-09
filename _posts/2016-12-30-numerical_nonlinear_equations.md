@@ -37,7 +37,7 @@ title: 非线性方程数值解法
 
 设函数\\( f(x) \\)在区间\\( [a, b] \\)上连续，且\\( f(a) \cdot f(b) < 0 \\)，可知方程\\( f(x) = 0 \\)在\\( [a, b] \\)内一定有解。
 
-对于预先给定的精度\\( \varepsilon > 0 \\)，只要二分次数\\( n \\)满足
+记 \\( x ^*\\) 为方程的精确解，对于预先给定的精度\\( \varepsilon > 0 \\)，只要二分次数\\( n \\)满足
 
 >\\( n > \frac{\ln (b-a) - \ln (2 \varepsilon)}{\ln 2} \\)
 
@@ -45,7 +45,41 @@ title: 非线性方程数值解法
 
 >\\( \vert x ^* - x _n \vert < \varepsilon \\)
 
-\\( x _n \\)就是满足精度要求的近似解。(式中 \\( x ^*\\) 为方程的精确解。)
+\\( x _n \\)就是满足精度要求的近似解。
+
+- 例3.1 使用二分法求方程\\( x ^3 + x - 1 = 0 \\)在\\( [0,1] \\)内的近似解，误差\\( < 10 ^{-5} \\)。
+
+数值解法：
+
+    #!/usr/bin/env python
+    import math
+    x1 = 0.0
+    x2 = 1.0
+    def eq(x):
+        y = x ** 3 + x - 1
+        return y
+    def eqx(x1, x2):
+        x0 = (x1+x2)/2
+        return x0
+    def eqy(x1, x2):
+        x0 =eqx(x1, x2)
+        y0 = eq(x0)
+        return y0
+    er = 1
+    while er > 0.00001:
+        x0 = eqx(x1, x2)
+        y1 = eq(x1)
+        y0 = eqy(x1, x2)
+        if y1*y0 < 0:
+            x2 = x0
+        else:
+            x1 = x0
+        er = math.fabs(x2-x1)
+    print "(" + str(x0) + "," + str(er) + ")"
+
+输出为：
+
+    (0.682334899902,7.62939453125e-06)
 
 ### 迭代法
 
@@ -130,32 +164,7 @@ title: 非线性方程数值解法
 
 ### 二分法
 
-    #!/usr/bin/env python
-    import math
-    x1 = 1.0
-    x2 = 2.0
-    def eq(x):
-        y = x+math.log(x)-2
-        return y
-    def eqx(x1, x2):
-        x0 = (x1+x2)/2
-        return x0
-    def eqy(x1, x2):
-        x0 =eqx(x1, x2)
-        y0 = eq(x0)
-        return y0
-    i = 0
-    while math.fabs(x2-x1) > 0.00000000001:
-        i += 1
-        x0 = eqx(x1, x2)
-        y1 = eq(x1)
-        y0 = eqy(x1, x2)
-        if y1*y0 < 0:
-            x2 = x0
-        else:
-            x1 = x0
-    print x0
-    print i
+
 
 
 ## 线性方程组的解法(numpy)
