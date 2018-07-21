@@ -528,7 +528,7 @@ title: 非线性方程数值解法
 
 ### 5. 使用 scipy.optimize.fsolve() 求解非线性方程
 
-scipy.optimize 模块的 fsolve 函数可以非常方便地求解常见的非线性方程(组)。
+用 python 的 scipy.optimize 库中 fsolve 函数可以求解常见的非线性方程(组)，可以看到求解非线性方程(组)的问题实际上是一个优化问题。
 
 - 例5.1 求解方程\\( x ^3 + x - 1 = 0 \\)。
 
@@ -546,13 +546,15 @@ scipy.optimize 模块的 fsolve 函数可以非常方便地求解常见的非线
 
     [ 0.6823278]
 
-- 例5.2 求解方程组\\( \begin{cases} x ^2 + 2y = 1 \\ 3x - 4y = 0 \end{cases} \\)。
+- 例5.2 求解方程组
+
+\\( \begin{cases} x ^2 + 2y = 1 \\
+     3x - 4y = 0 \end{cases} \\)
 
 程序：
 
     #!/usr/bin/env python
     from scipy.optimize import fsolve
-    import math
     def f(x):
         x0 = float(x[0])
         x1 = float(x[1])
@@ -574,6 +576,7 @@ scipy.optimize 模块的 fsolve 函数可以非常方便地求解常见的非线
 
 程序：
 
+    #!/usr/bin/env python
     from scipy.optimize import fsolve
     from math import sin,cos,e
     def f(x):
@@ -581,7 +584,6 @@ scipy.optimize 模块的 fsolve 函数可以非常方便地求解常见的非线
         return [
             cos(x)  - sin(x)*(e**x)
         ]
-
     result = fsolve(f, 1)
     print result
     print f(result)
