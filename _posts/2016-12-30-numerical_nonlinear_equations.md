@@ -442,13 +442,13 @@ title: 非线性方程数值解法
 
 ### 4.2 Aitken法
 
-松弛加速需要计算\\( \varphi ' (x _n) \\)，Aitken 法用差商替代导数，简化了计算。
+松弛加速需要计算\\( \varphi \prime (x _n) \\)，Aitken 法用差商替代导数，简化了计算。
 
 设迭代格式为\\( x _{n+1} = \varphi (x_n) \\)，\\( x ^* \\)为方程\\( x = \varphi (x) \\)的解，即\\( x ^* = \varphi (x ^*) \\)，则
 
->\\( x _{n+1} - x ^* = \varphi (x_n) - \varphi (x ^*) = \varphi ' ( \xi ) (x _n - x^*) \\)
+>\\( x _{n+1} - x ^* = \varphi (x _n) - \varphi (x ^*) = \varphi \prime ( \xi ) (x _n - x ^*) \\)
 
-使用差商\\( \frac{ \varphi (x_n) - \varphi (x _{n-1}) }{ x _n - x _{n-1} } \\)近似替代\\( \varphi ' ( \xi ) \\)，则
+使用差商\\( \frac{ \varphi (x_n) - \varphi (x _{n-1}) }{ x _n - x _{n-1} } \\)近似替代\\( \varphi \prime ( \xi ) \\)，则
 
 >\\( x _{n+1} - x ^* = \frac{x _{n+1} - x _n}{x _n - x _{n-1}} (x _n - x ^*) \\)
 
@@ -476,5 +476,96 @@ title: 非线性方程数值解法
 
 程序：
 
+    #!/usr/bin/env python
+    import math
+    x0 = 2.5
+
+    def eq(x):
+        y = (x**3 + 2.0)/5.0
+        return y
+    def aitken(x0,x1,x2):
+        y = x2 - ((x2-x1)**2)/(x2 - 2.0*x1 + x0)
+        return y
+
+    err = 1
+    i = 0
+    x = x0
+    while err > 0.000001:
+        x0 = x
+        x1 = eq(x)
+        x2 = eq(x1)
+        x = aitken(x,x1,x2)
+        err = math.fabs(x-x0)
+        i += 1        
+        print "Aitken加速：迭代" + str(i) + "次，" + str((x, err))
+
+    j = 0
+    x0 = 2.5
+    while j < 6:
+        if j == 0:
+            x = eq(x0)
+        else:
+            x = eq(x)
+        j += 1        
+        print "未加速：迭代" + str(j) + "次，" + str(x)
 
 输出：
+
+    Aitken加速：迭代1次，(2.272101942691977, 0.22789805730802293)
+    Aitken加速：迭代2次，(2.1021712171330007, 0.16993072555897637)
+    Aitken加速：迭代3次，(2.0180937910816468, 0.08407742605135393)
+    Aitken加速：迭代4次，(2.0006517327321096, 0.01744205834953716)
+    Aitken加速：迭代5次，(2.000000872732025, 0.0006508600000847409)
+    Aitken加速：迭代6次，(2.0000000000015667, 8.727304581235273e-07)
+    未加速：迭代1次，3.525
+    未加速：迭代2次，9.160065625
+    未加速：迭代3次，154.118363007
+    未加速：迭代4次，732138.753077
+    未加速：迭代5次，7.84892503934e+16
+    未加速：迭代6次，9.67075853845e+49
+
+可以看到原迭代格式是不收敛的，而 Aitken 格式则收敛。
+
+### 5. 使用 scipy.optimize.fsolve() 求解非线性方程
+
+scipy.optimize模块的fsolve函数可以非常方便地求解非线性方程(组)。
+
+- 例5.1 求解方程\\( x ^3 + x - 1 = 0 \\)。
+
+程序：
+
+    #!/usr/bin/env python
+    from scipy.optimize import fsolve
+    import math
+    def f(x):
+        return x ** 3.0 + x - 1.0
+    result = fsolve(f, 0)
+    print result
+
+输出：
+
+    [ 0.6823278]
+
+- 例5.2 求解方程组\\( \begin{cases} x ^2 + 2y = 1 \\ 3x - 4y = 0 \end{cases} \\)。
+
+程序：
+
+    #!/usr/bin/env python
+    from scipy.optimize import fsolve
+    import math
+    def f(x):
+        x0 = float(x[0])
+        x1 = float(x[1])
+        return [
+            x0 ** 2 + x1 *2 -1,
+            x0 *3 - x1 * 4
+            ]
+    result1 = fsolve(f, [-1.5,1])
+    result2 = fsolve(f, [2.0,1])
+    print result1
+    print result2
+
+输出：
+
+    [-2.  -1.5]
+    [ 0.5    0.375]
