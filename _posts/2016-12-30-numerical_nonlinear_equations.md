@@ -191,16 +191,10 @@ title: 非线性方程数值解法
     xn = x0
     while err > 0.000001:
         x = xn
-        xn = eq1_1(xn)
-#       xn = eq1_2(xn)
-#       xn = eq2_1(xn)
-#       xn = eq2_2(xn)
+        xn = eq1_1(xn) # xn = eq1_2(xn);xn = eq2_1(xn);xn = eq2_2(xn)
         i += 1
         err = math.fabs(x-xn)
     print "3_3(1)方法1：迭代" + str(i) + "次，" + str((xn, err))
-#   print "3_3(1)方法2：迭代" + str(i) + "次，" + str((xn, err))
-#   print "3_3(2)方法1：迭代" + str(i) + "次，" + str((xn, err))
-#   print "3_3(2)方法2：迭代" + str(i) + "次，" + str((xn, err))
 
 输出：
 
@@ -356,4 +350,26 @@ title: 非线性方程数值解法
 
     迭代3次，(1.8793852415724437, 3.2711481523506336e-08)
 
-### 4.
+### 4. 迭代加速
+
+### 4.1 松弛法
+
+在迭代计算过程中，当迭代发散或收敛很慢时，可以使用松弛法进行迭代加速。松弛法是指由已经构造的迭代格式\\( x _{n+1} = \varphi (x _n) \\)，选取松弛因子\\( \omega \\)，进行处理，得到新的迭代格式为
+
+>\\( x _{n+1} = \omega \varphi (x_n) + (1- \omega ) x_n \\)
+
+设
+
+>\\( h(x) = \omega \varphi (x) + (1- \omega ) x \\)
+
+在满足\\( \vert h'(x) \vert < 1 \\)条件下，迭代收敛。令\\( h'(a)=0 \\)，得到
+
+>\\( \omega = \frac{1}{1- \varphi ' (a) } \\)
+
+用\\( x_n \\)代替\\( a \\)，得
+
+>\\( \omega = \frac{1}{1- \varphi ' (x _n) } \\)
+
+由此得到松弛加速迭代格式
+
+>\\( x _{n+1} = \frac{ \varphi (x_n) - x_n \varphi ' (x_n)}{1 - \varphi ' (x_n)} \\)
