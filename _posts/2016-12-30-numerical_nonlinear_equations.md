@@ -111,30 +111,30 @@ title: 非线性方程数值解法
     x0 = 1.0
 
     def eq1(x):
-    y = 2.0/x
-    return y
+        y = 2.0/x
+        return y
     def eq2(x):
-    y = 0.5*(x+2.0/x)
-    return y
+        y = 0.5*(x+2.0/x)
+        return y
     def eq3(x):
-    y = (2.0*x - x**2 +2.0)**(1.0/3.0)
-    return y
+        y = (2.0*x - x**2 +2.0)**(1.0/3.0)
+        return y
     def eq4(x):
-    y = 1.0+1.0/(1.0+x)
-    return y
+        y = 1.0+1.0/(1.0+x)
+        return y
 
     n = [1,2,3,4,5,6,7,8,9,10,11]
 
     for m in n:
-    for i in range(m):
-        if i==0:
-            x_1 = x_2 = x_3 = x_4 = x0
-        else:
-            x_1 = eq1(x_1)
-            x_2 = eq2(x_2)
-            x_3 = eq3(x_3)
-            x_4 = eq4(x_4)
-    print "迭代"+str(m)+"次：" + str((x_1, x_2, x_3, x_4))
+        for i in range(m):
+            if i==0:
+                x_1 = x_2 = x_3 = x_4 = x0
+            else:
+                x_1 = eq1(x_1)
+                x_2 = eq2(x_2)
+                x_3 = eq3(x_3)
+                x_4 = eq4(x_4)
+        print "迭代"+str(m)+"次：" + str((x_1, x_2, x_3, x_4))
 
 输出：
 
@@ -160,15 +160,56 @@ title: 非线性方程数值解法
 
 方法2：\\( x _{n+1} = 1 + \frac{1}{x _n} + \frac{1}{x ^2 _n} \\)
 
-
-
 (2) \\( 5x - e ^x = 0 \\)
 
 方法1：\\( x _{n+1} = \frac{e ^{x_n}}{5} \\)
 
 方法2：\\( x = \frac{1}{10} (5x_n + e ^{x_n}) \\)
 
-### 迭代法
+程序：
+
+    #!/usr/bin/env python
+    import math
+    x0 = 2.0
+
+    def eq1_1(x):
+        y = (x**2.0+x+1.0)**(1.0/3.0)
+        return y
+    def eq1_2(x):
+        y = 1.0+1.0/x+1.0/(x**2.0)
+        return y
+    def eq2_1(x):
+        y = math.e ** x/5.0
+        return y
+    def eq2_2(x):
+        y = 0.1*(5.0*x+math.e**x)
+        return y
+    err = 1
+    i = 0
+    xn = x0
+    while err > 0.000001:
+        x = xn
+        xn = eq1_1(xn)
+#       xn = eq1_2(xn)
+#       xn = eq2_1(xn)
+#       xn = eq2_2(xn)
+        i += 1
+        err = math.fabs(x-xn)
+    print "3_3(1)方法1：迭代" + str(i) + "次，" + str((xn, err))
+#   print "3_3(1)方法2：迭代" + str(i) + "次，" + str((xn, err))
+#   print "3_3(2)方法1：迭代" + str(i) + "次，" + str((xn, err))
+#   print "3_3(2)方法2：迭代" + str(i) + "次，" + str((xn, err))
+
+输出：
+
+    3_3(1)方法1：迭代16次，(1.8392874164327768, 7.731202917860003e-07)
+    3_3(1)方法2：迭代27次，(1.8392864276650116, 8.584023183377809e-07)
+    3_3(2)方法1：迭代14次，(0.25917119358536855, 2.6230974975449683e-07)
+    3_3(2)方法2：迭代33次，(0.25917224855675247, 6.746787469258386e-07)
+
+- 例3.4 求解方程\\( x + \ln x = 2 \\)。
+
+迭代法求解：
 
     #!/usr/bin/env python
     import math
@@ -178,14 +219,19 @@ title: 非线性方程数值解法
         return x1
     x1 = eq(x0)
     i = 0
-    while math.fabs(x0-x1) > 0.00000000001:
-        i += 1
+    err = math.fabs(x0-x1)
+    while err > 0.00000000001:
         x0 = x1
         x1 = eq(x0)
-    print x1
-    print i
+        i += 1
+        err = math.fabs(x0-x1)
+    print "迭代" + str(i) + "次，" + str((x1, err))
 
-### 加速迭代法
+输出：
+
+    迭代56次，(1.5571455990005743, 7.576606009251918e-12)
+
+迭代法有很多加速方法，如：
 
     #!/usr/bin/env python
     import math
@@ -196,17 +242,46 @@ title: 非线性方程数值解法
     x1 = eq(x0)
     x2 = eq(x1)
     i = 0
-    while math.fabs(x2-x1) > 0.00000000001:
+    err = math.fabs(x2-x1)
+    while err > 0.00000000001:
         if x2-2*x1+x0 == 0:
             break
-        i += 1
         x0 = x2-((x2-x1)**2)/(x2-2*x1+x0)
         x1 = eq(x0)
         x2 = eq(x1)
-    print x2
-    print i
+        i += 1
+        err = math.fabs(x2-x1)
+    print "迭代" + str(i) + "次，" + str((x2, err))
 
-### 牛顿切线法
+输出：
+
+    迭代3次，(1.5571455989978924, 7.185363415374013e-13)
+
+### 3.4 牛顿法
+
+设函数\\( f(x) \\)在区间\\( [a, b] \\)上有二阶导数，\\( f(a) \cdot f(b) < 0 \\)，且\\( f ' (x) \\)、\\( f '' (x) \\)在区间\\( [a, b] \\)内不变号，则方程\\( f(x) = 0 \\)在\\( [a, b] \\)内有且只有一个实根。
+
+设\\( x _0 \\)为\\( f(x) \\)上的一点，则过\\( x _0 \\)的切线方程为
+
+>\\( y = f (x_0) + f'(x_0)(x - x_0) \\)
+
+令\\( y = 0 \\)，得到切线与\\( x \\)轴的交点为
+
+>\\( x = x_0 - \frac{f(x_0)}{f'(x_0)} \\)
+
+据此可构造迭代关系式
+
+>\\( x _{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \\)
+
+这种迭代方法称为牛顿切线法。
+
+- 例3.5 使用牛顿切线法求方程\\( x ^3 + x - 1 = 0 \\)在\\( [0, 1] \\)内的近似解。
+
+该方程的迭代关系式为：
+
+>\\( x _{n+1} = x_n - \frac{x _n ^3 + x _n - 1}{3x ^2 _n + 1} \\)
+
+
 
     #!/usr/bin/env python
     import math
