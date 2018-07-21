@@ -15,7 +15,7 @@ title: 非线性方程数值解法
 
 在浏览器中访问 http://localhost:8888 就可以打开 jupyter notebook。
 
-关于 jupyter 的使用方法，可点击 jupyter notebook 中的 help 菜单查看或访问[在线文档][ref01]。
+关于 jupyter 的使用方法，可查看 jupyter notebook 中的 help 菜单或[在线文档][ref01]。
 
 [ref01]:http://ipython.org/notebook.html "http://ipython.org/notebook.html"
 
@@ -373,3 +373,69 @@ title: 非线性方程数值解法
 由此得到松弛加速迭代格式
 
 >\\( x _{n+1} = \frac{ \varphi (x_n) - x_n \varphi ' (x_n)}{1 - \varphi ' (x_n)} \\)
+
+- 例4.1 采用松弛加速迭代算法求解以下方程：
+
+(1) \\( x^3 - x^2 - x - 1 = 0 \\)
+
+其松弛加速迭代格式为
+
+>\\( x _{n+1} = \frac{ -2 x _n ^3 + x _n ^2 - 1 }{ -3 x _n ^3 + 2x _n + 1 } \\)
+
+程序：
+
+    #!/usr/bin/env python
+    import math
+    x0 = 3.0
+
+    def eq(x):
+        y = (-2.0 * (x**3) + x**2 -1.0)/(-3.0 * (x**2) + x*2.0 + 1.0)
+        return y
+    err = 1
+    i = 0
+    while err > 0.000001:
+        if i == 0:
+            x = x0
+        else:
+            x0 = x
+            x = eq(x)
+            err = math.fabs(x-x0)
+        i += 1        
+    print "迭代" + str(i) + "次，" + str((x, err))
+
+输出：
+
+    迭代7次，(1.8392867552141607, 3.9248069239050665e-09)
+
+对比例3-3(1)，可以看到，得到同样精度的解，迭代次数从16次下降到7次。
+
+(2) \\( 5x - e ^x = 0 \\)
+
+其松弛加速迭代格式为
+
+>\\( x _{n+1} = \frac{ (1 - x _n) e ^{x _n} }{ 5 - e ^{x _n} } \\)
+
+程序：
+
+    #!/usr/bin/env python
+    import math
+    x0 = 1.0
+
+    def eq(x):
+        y = ((1-x)*(math.e**x))/(5-math.e**x)
+        return y
+    err = 1
+    i = 0
+    while err > 0.000001:
+        if i == 0:
+            x = x0
+        else:
+            x0 = x
+            x = eq(x)
+            err = math.fabs(x-x0)
+        i += 1        
+    print "迭代" + str(i) + "次，" + str((x, err))
+
+输出：
+
+    迭代6次，(0.25917110181907377, 3.716360552630249e-11)
