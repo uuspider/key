@@ -323,67 +323,37 @@ title: 非线性方程数值解法
 
 >\\( f^' (x _n) = \frac{f(x _n)-f(x _{n-1})}{x _n - x _{n-1}} \\)
 
-得到单点弦位迭代式
+得到两点弦位迭代式
 
 >\\( x _{n+1} = x_n - \frac{f(x_n)(x_n - x _{n-1})}{f(x _n) - f(x _{n-1})} \\)
 
+- 例3.6 使用两点弦位迭代法求方程\\( x ^3 + x - 1 = 0 \\)在\\( x _0 = 2 \\)附近的近似解。
+
+两点弦位迭代法：
+
     #!/usr/bin/env python
     import math
-    x0 = 1.0
-    x1 = 2.0
-    def eq(x):
-        y = x+math.log(x)-2
+    x0 = 2.0
+    x1 = 1.9
+    def f(x):
+        y = (x ** 3.0 - x * 3.0 -1.0)
         return y
-    def eqx(x0, x1):
-        x2 = x1-eq(x1)*(x1-x0)/(eq(x1)-eq(x0))
+    def eq(x0,x1):
+        x2 = x1-f(x1)*(x1-x0)/(f(x1)-f(x0))
         return x2
-    x2 = eqx(x0, x1)
     i = 0
-    while math.fabs(x2-x1) > 0.00000000001:
-        i += 1
+    err = 1.0
+    x2 = eq(x0,x1)
+    while err > 0.00001:
         x0 = x1
         x1 = x2
-        x2 = eqx(x0, x1)
-    print x2
-    print i
+        x2 = eq(x0,x1)
+        err = math.fabs(x2-x1)
+        i += 1
+    print "迭代" + str(i) + "次，" + str((x2, err))
 
-### 二分法
+输出：
 
+    迭代3次，(1.8793852415724437, 3.2711481523506336e-08)
 
-
-
-## 线性方程组的解法(numpy)
-
-    #!/usr/bin/env python
-    import numpy as np
-    a = np.array([[10,-1,-2],[-1,10,-2],[-1,-1,5]])
-    # a = np.mat("10 -1 -2; -1 10 -2; -1 -1 5")
-    b = np.array([7.2, 8.3, 4.2])
-    x = np.linalg.solve(a, b)
-    print x
-    r = np.allclose(np.dot(a, x), b)
-    print r
-
-## 插值方法
-
-### 拉格朗日插值
-
-    #!/usr/bin/env python
-    import math
-    import numpy as np
-    n = 4
-    xk = 0.20
-    x = [0.10, 0.15, 0.25, 0.30]
-    y = [0.904837, 0.860708, 0.778801, 0.740818]
-    l = []
-    result = 0
-    for i in range(n):
-        l.append(1)
-        for j in range(n):
-            if i != j:
-                ll = (xk-x[j])/(x[i]-x[j])
-            else:
-                ll = 1
-            l[i] = l[i]*ll
-        result = result + y[i]*l[i]
-    print result
+### 4. 
