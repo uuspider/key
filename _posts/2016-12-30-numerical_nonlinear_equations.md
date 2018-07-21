@@ -569,3 +569,24 @@ scipy.optimize模块的fsolve函数可以非常方便地求解非线性方程(�
 
     [-2.  -1.5]
     [ 0.5    0.375]
+
+- 例5.3 求解方程\\( \cos (x) = \sin (x) e ^x \\)。
+
+程序：
+
+    from scipy.optimize import fsolve
+    from math import sin,cos,e
+    def f(x):
+        x = float(x)
+        return [
+            cos(x)  - sin(x)*(e**x)
+        ]
+
+    result = fsolve(f, 1)
+    print result
+    print f(result)
+
+输出：
+
+    [ 0.53139086]
+    [0.0]
