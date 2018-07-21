@@ -548,7 +548,7 @@ title: 非线性方程数值解法
 
 - 例5.2 求解方程组
 
-\\( \begin{cases} x ^2 + 2y = 1 \\
+\\( \begin{cases} x ^2 + 2y = 1 \\\\
      3x - 4y = 0 \end{cases} \\)
 
 程序：
