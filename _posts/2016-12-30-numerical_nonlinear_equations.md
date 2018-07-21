@@ -446,7 +446,7 @@ title: 非线性方程数值解法
 
 设迭代格式为\\( x _{n+1} = \varphi (x_n) \\)，\\( x ^* \\)为方程\\( x = \varphi (x) \\)的解，即\\( x ^* = \varphi (x ^*) \\)，则
 
->\\( x _{n+1} - x ^* = \varphi (x _n) - \varphi (x ^*) = \varphi \prime ( \xi ) (x _n - x ^*) \\)
+>\\( x _{n+1} - x ^* = \varphi (x _n) - \varphi ( x ^* ) = \varphi \prime ( \xi ) ( x _n - x ^* ) \\)
 
 使用差商\\( \frac{ \varphi (x_n) - \varphi (x _{n-1}) }{ x _n - x _{n-1} } \\)近似替代\\( \varphi \prime ( \xi ) \\)，则
 
@@ -528,7 +528,7 @@ title: 非线性方程数值解法
 
 ### 5. 使用 scipy.optimize.fsolve() 求解非线性方程
 
-scipy.optimize模块的fsolve函数可以非常方便地求解非线性方程(组)。
+scipy.optimize 模块的 fsolve 函数可以非常方便地求解常见的非线性方程(组)。
 
 - 例5.1 求解方程\\( x ^3 + x - 1 = 0 \\)。
 
