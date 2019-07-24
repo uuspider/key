@@ -499,7 +499,7 @@ python有很多用于计算积分的[模块和库][ref01]，scipy是科学计算
 
 \\(
 \begin{cases}
-\bar{y} _{n+1} = y_n +hf( x_n , y_n ), \\
+\bar{y} _{n+1} = y_n +hf( x_n , y_n ), \\\\
 y _{n+1} = y_n +hf(x _{n+1} , \bar{y} _{n+1}, n = 1, 2, \cdots
 \end{cases}
 \\)
@@ -512,8 +512,8 @@ y _{n+1} = y_n +hf(x _{n+1} , \bar{y} _{n+1}, n = 1, 2, \cdots
 
 \\(
 \begin{cases}
-\bar{y} _{n+1} = y_n +hf( x_n , y_n ), \\
-y _{n+1} = y_n + \frac{h}{2}[f(x _n , y _n) + f(x _{n+1} , \bar{y} _{n+1}, n = 1, 2, \cdots
+\bar{y} _{n+1} = y_n +hf( x_n , y_n ), \\\\
+y _{n+1} = y_n + \frac{h}{2}[f(x _n , y _n) + f(x _{n+1} , \bar{y} _{n+1})], n = 1, 2, \cdots
 \end{cases}
 \\)
 
